@@ -10,26 +10,45 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
 
+    @IBOutlet weak var firstLoginTextField: UITextField!
+    
+    @IBOutlet weak var secondLoginTextField: UITextField!
+    
+    @IBOutlet weak var thirdLoginTextField: UITextField!
+    
+    @IBOutlet weak var fourthLoginTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        firstLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
+        secondLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
+        thirdLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
+        fourthLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        firstLoginTextField.becomeFirstResponder()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func didChange(textField: UITextField) {
+        
+        let text = textField.text
+        
+        if text?.utf16.count == 1 {
+            switch textField {
+            case firstLoginTextField:
+                secondLoginTextField.becomeFirstResponder()
+            case secondLoginTextField:
+                thirdLoginTextField.becomeFirstResponder()
+            case thirdLoginTextField:
+                fourthLoginTextField.becomeFirstResponder()
+            case fourthLoginTextField:
+                fourthLoginTextField.becomeFirstResponder()
+            default:
+                break
+            }
+        }        
     }
-    */
-
 }

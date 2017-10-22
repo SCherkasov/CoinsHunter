@@ -15,6 +15,7 @@
 		8A38CDAE1F9D036F0014AFD4 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A38CDAD1F9D036F0014AFD4 /* Slide.xib */; };
 		8A38CDB01F9D03A20014AFD4 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38CDAF1F9D03A20014AFD4 /* Slide.swift */; };
 		8A38CDB21F9D04CD0014AFD4 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38CDB11F9D04CD0014AFD4 /* SecondPageViewController.swift */; };
+		8A38CDB41F9D17290014AFD4 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38CDB31F9D17290014AFD4 /* LoginPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8A38CDAD1F9D036F0014AFD4 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		8A38CDAF1F9D03A20014AFD4 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		8A38CDB11F9D04CD0014AFD4 /* SecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
+		8A38CDB31F9D17290014AFD4 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8A38CDAC1F9D03350014AFD4 /* View */,
 				8A38CD961F9CE4810014AFD4 /* AppDelegate.swift */,
 				8A38CD9A1F9CE4810014AFD4 /* Main.storyboard */,
+				8A38CDB31F9D17290014AFD4 /* LoginPageViewController.swift */,
 				8A38CD9D1F9CE4810014AFD4 /* Assets.xcassets */,
 				8A38CD9F1F9CE4810014AFD4 /* LaunchScreen.storyboard */,
 				8A38CDA21F9CE4810014AFD4 /* Info.plist */,
@@ -158,6 +161,7 @@
 				8A38CDB01F9D03A20014AFD4 /* Slide.swift in Sources */,
 				8A38CDB21F9D04CD0014AFD4 /* SecondPageViewController.swift in Sources */,
 				8A38CDA91F9CF5DF0014AFD4 /* FirstPageViewController.swift in Sources */,
+				8A38CDB41F9D17290014AFD4 /* LoginPageViewController.swift in Sources */,
 				8A38CD971F9CE4810014AFD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

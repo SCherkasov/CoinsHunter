@@ -92,6 +92,9 @@
                     <navigationItem key="navigationItem" id="8q2-l4-RZO">
                         <barButtonItem key="rightBarButtonItem" title="Skip" id="dsd-ql-Vsg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="AVd-kP-wbI" kind="show" id="Gyt-iK-w3s"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -102,6 +105,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjE-re-1mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1650" y="215"/>
+        </scene>
+        <!--Login Page View Controller-->
+        <scene sceneID="ObU-rJ-4jX">
+            <objects>
+                <viewController id="AVd-kP-wbI" customClass="LoginPageViewController" customModule="CoinsHunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mWB-m8-Z4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="jDY-Hs-Sig"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s4p-rZ-jNS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eme-88-Q29">
+                                <rect key="frame" x="107" y="318" width="160" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-5G-AmF">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-Ze-Nje">
+                                        <rect key="frame" x="45" y="0.0" width="25" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-XZ-jU6">
+                                        <rect key="frame" x="90" y="0.0" width="25" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-mm-bc3">
+                                        <rect key="frame" x="135" y="0.0" width="25" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eme-88-Q29" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="GCP-AA-cGz"/>
+                            <constraint firstItem="eme-88-Q29" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="ZvK-xr-Tvd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstLoginTextField" destination="Kl6-5G-AmF" id="3sQ-bN-fQe"/>
+                        <outlet property="fourthLoginTextField" destination="pFy-mm-bc3" id="ve4-FC-MtQ"/>
+                        <outlet property="secondLoginTextField" destination="4YC-Ze-Nje" id="CqK-r3-TMV"/>
+                        <outlet property="thirdLoginTextField" destination="GaQ-XZ-jU6" id="2QV-ex-r8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="214.54272863568218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l1g-tp-t1e">
