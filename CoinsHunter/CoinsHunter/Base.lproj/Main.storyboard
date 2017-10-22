@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstPageViewController" customModule="CoinsHunter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,109 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="798-lw-NJo">
+                                <rect key="frame" x="92" y="247" width="190" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="6Az-Jv-WZV"/>
+                                    <constraint firstAttribute="width" constant="190" id="sCR-kM-EGG"/>
+                                </constraints>
+                                <state key="normal" image="1euro"/>
+                                <connections>
+                                    <action selector="oneEuroStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikS-3g-zu7"/>
+                                    <segue destination="jv0-sp-YPi" kind="show" id="L6b-Gf-fgS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tab to continue..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9f-sM-Np5">
+                                <rect key="frame" x="108" y="484" width="159" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="48m-NC-UGQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="798-lw-NJo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NZf-um-eAm"/>
+                            <constraint firstItem="c9f-sM-Np5" firstAttribute="top" secondItem="798-lw-NJo" secondAttribute="bottom" constant="65" id="RYa-M8-MlA"/>
+                            <constraint firstItem="c9f-sM-Np5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihT-hY-YTW"/>
+                            <constraint firstItem="798-lw-NJo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sE9-C5-FKZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blinkingLabel" destination="c9f-sM-Np5" id="8FE-n2-z2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="148" y="215"/>
+        </scene>
+        <!--Second Page View Controller-->
+        <scene sceneID="f5Q-3x-fHF">
+            <objects>
+                <viewController id="BzZ-aP-iPo" customClass="SecondPageViewController" customModule="CoinsHunter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FRh-Nn-XQV"/>
+                        <viewControllerLayoutGuide type="bottom" id="v4d-xm-oZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sKG-Pj-MN7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VgM-2J-QPh">
+                                <rect key="frame" x="80" y="570" width="215" height="37"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilW-d0-eoA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v4d-xm-oZB" firstAttribute="top" secondItem="ilW-d0-eoA" secondAttribute="bottom" id="CQ3-zD-BQg"/>
+                            <constraint firstItem="ilW-d0-eoA" firstAttribute="top" secondItem="sKG-Pj-MN7" secondAttribute="top" id="ZVf-2w-ExN"/>
+                            <constraint firstAttribute="trailing" secondItem="ilW-d0-eoA" secondAttribute="trailing" id="fHO-8f-mUo"/>
+                            <constraint firstAttribute="trailing" secondItem="VgM-2J-QPh" secondAttribute="trailing" constant="80" id="kvg-9o-KiU"/>
+                            <constraint firstItem="ilW-d0-eoA" firstAttribute="leading" secondItem="sKG-Pj-MN7" secondAttribute="leading" id="p3k-pc-v3U"/>
+                            <constraint firstItem="v4d-xm-oZB" firstAttribute="top" secondItem="VgM-2J-QPh" secondAttribute="bottom" constant="60" id="psd-bR-8gO"/>
+                            <constraint firstItem="VgM-2J-QPh" firstAttribute="leading" secondItem="sKG-Pj-MN7" secondAttribute="leading" constant="80" id="w9s-8Z-ccK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8q2-l4-RZO">
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="dsd-ql-Vsg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pageControl" destination="VgM-2J-QPh" id="WZh-dp-ExN"/>
+                        <outlet property="slideScrollView" destination="ilW-d0-eoA" id="Ycn-Jf-4nl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BjE-re-1mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650" y="215"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l1g-tp-t1e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jv0-sp-YPi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sT6-y9-hMk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BzZ-aP-iPo" kind="relationship" relationship="rootViewController" id="cZa-1L-U3b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cF-LM-cMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1euro" width="600" height="561"/>
+    </resources>
 </document>
