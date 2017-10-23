@@ -9,7 +9,7 @@
 import UIKit
 
 class BlinkingLabel : UILabel {
-    func blink() {
+    func startBlinking() {
         self.alpha = 0.0;
         UIView.animate(withDuration: 0.9, //Time of duration
             delay: 0.0,
