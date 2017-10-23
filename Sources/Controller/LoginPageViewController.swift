@@ -42,18 +42,47 @@ class LoginPageViewController: UIViewController {
         self.passcodeTextFields[0].becomeFirstResponder()
     }
     
-    @IBAction func onEditingDidChange(_ textField: UITextField) {
-        self.passcodeTextFields.index(of: textField).map { i in
-            var nextIndex: Int?
-            
-            if (textField.text == nil || textField.text == "") {
-                nextIndex = i - 1 < 0 ? 0 : i - 1
+    private func textField(offsetedBy offset:Int, from textField:UITextField)  -> UITextField? {
+        return self.passcodeTextFields.index(of: textField)
+            .map { $0 + offset }
+            .flatMap { $0 < self.passcodeTextFields.count && $0 >= 0 ? self.passcodeTextFields[$0] : nil }
+    }
+    
+    private func nextPasscodeTextField(following textField: UITextField) -> UITextField? {
+        return self.textField(offsetedBy: +1, from: textField)
+    }
+
+    private func previousPasscodeTextField(preceeding textField: UITextField) -> UITextField? {
+        return self.textField(offsetedBy: -1, from: textField)
+    }
+    
+    private func isLastTextField(textField: UITextField) -> Bool {
+        return self.nextPasscodeTextField(following: textField) == nil
+    }
+    
+    @IBAction func onEditingDidBegin(_ textField: UITextField) {
+    }
+    
+    @IBAction func onEditingDidChange(_ passcodeTextField: UITextField) {
+        passcodeTextField.text.map { passcode in
+            if (passcode == "") {
+                _ = self.previousPasscodeTextField(preceeding: passcodeTextField).map {
+                    $0.becomeFirstResponder()
+                }
             } else {
-                nextIndex = (i < self.passcodeTextFields.count - 1) ? i + 1 : nil
-            }
-            
-            _ = nextIndex.map {
-                self.passcodeTextFields[$0].becomeFirstResponder()
+                passcodeTextField.text = passcode.characters.first.map { String($0) }
+                
+                if let nextPasscodeTextField = self.nextPasscodeTextField(following: passcodeTextField) {
+                    nextPasscodeTextField.becomeFirstResponder()
+                    
+                    let newValue = String(passcode.characters.dropFirst())
+                    if (!newValue.isEmpty) {
+                        nextPasscodeTextField.text = newValue
+                        onEditingDidChange(nextPasscodeTextField)
+                    }
+                } else {
+                    self.view.endEditing(true)
+                }
             }
         }
     }

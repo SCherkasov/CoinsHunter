@@ -127,15 +127,17 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                         <connections>
+                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="ele-hf-nZo"/>
                                             <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="4PD-im-3hu"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-Ze-Nje">
                                         <rect key="frame" x="55" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                         <connections>
+                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="bFM-IV-ByI"/>
                                             <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="9aT-6q-PWD"/>
                                         </connections>
                                     </textField>
@@ -145,6 +147,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                         <connections>
+                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="aZW-LP-PIO"/>
                                             <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="QE5-5h-fXw"/>
                                         </connections>
                                     </textField>
@@ -154,6 +157,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                         <connections>
+                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="mff-xa-cDt"/>
                                             <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="c4D-oH-Mta"/>
                                         </connections>
                                     </textField>
