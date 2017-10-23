@@ -16,6 +16,7 @@
 		E09908771F9E7A1A00316587 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908701F9E7A1A00316587 /* SecondPageViewController.swift */; };
 		E09908781F9E7A1A00316587 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908731F9E7A1A00316587 /* Slide.swift */; };
 		E09908791F9E7A1A00316587 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09908741F9E7A1A00316587 /* Slide.xib */; };
+		E099087C1F9E7ABC00316587 /* BlinkingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E09908701F9E7A1A00316587 /* SecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		E09908731F9E7A1A00316587 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		E09908741F9E7A1A00316587 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlinkingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		E099086C1F9E7A1A00316587 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E099087A1F9E7AA400316587 /* Library */,
 				E099086D1F9E7A1A00316587 /* Controller */,
 				E09908711F9E7A1A00316587 /* Model */,
 				E09908721F9E7A1A00316587 /* View */,
@@ -106,6 +109,14 @@
 				E09908741F9E7A1A00316587 /* Slide.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E099087A1F9E7AA400316587 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			files = (
 				E09908761F9E7A1A00316587 /* LoginPageViewController.swift in Sources */,
 				E09908771F9E7A1A00316587 /* SecondPageViewController.swift in Sources */,
+				E099087C1F9E7ABC00316587 /* BlinkingLabel.swift in Sources */,
 				E09908751F9E7A1A00316587 /* FirstPageViewController.swift in Sources */,
 				8A38CD971F9CE4810014AFD4 /* AppDelegate.swift in Sources */,
 				E09908781F9E7A1A00316587 /* Slide.swift in Sources */,
