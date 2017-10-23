@@ -8,47 +8,53 @@
 
 import UIKit
 
-class LoginPageViewController: UIViewController {
+// concat (nil, "s") -> "s"
+// concat ("d", nil) -> "d"
+// concat (nil, nil) -> nil
+// concat ("d", "s") -> "ds"
 
-    @IBOutlet weak var firstLoginTextField: UITextField!
-    
-    @IBOutlet weak var secondLoginTextField: UITextField!
-    
-    @IBOutlet weak var thirdLoginTextField: UITextField!
-    
-    @IBOutlet weak var fourthLoginTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        firstLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
-        secondLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
-        thirdLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
-        fourthLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
+func concat(_ strings:[String?]) -> String? {
+    return strings.reduce(nil) { (result, string) in
+        return result == nil ? string : result! + (string ?? "")
     }
+}
+
+class LoginPageViewController: UIViewController {
+    
+    @IBOutlet var passcodeTextFields: [UITextField]!
+    
+    var passcode: String? {
+        set {
+            var i = 0
+            _ = newValue?.characters.map {
+                self.passcodeTextFields[i].text = String($0)
+                i += 1
+            }
+        }
+        
+        get {
+            return concat(self.passcodeTextFields.map { $0.text })
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        firstLoginTextField.becomeFirstResponder()
+        self.passcodeTextFields[0].becomeFirstResponder()
     }
     
-    func didChange(textField: UITextField) {
-        
-        let text = textField.text
-        
-        if text?.utf16.count == 1 {
-            switch textField {
-            case firstLoginTextField:
-                secondLoginTextField.becomeFirstResponder()
-            case secondLoginTextField:
-                thirdLoginTextField.becomeFirstResponder()
-            case thirdLoginTextField:
-                fourthLoginTextField.becomeFirstResponder()
-            case fourthLoginTextField:
-                fourthLoginTextField.becomeFirstResponder()
-            default:
-                break
+    @IBAction func onEditingDidChange(_ textField: UITextField) {
+        self.passcodeTextFields.index(of: textField).map { i in
+            var nextIndex: Int?
+            
+            if (textField.text == nil || textField.text == "") {
+                nextIndex = i - 1 < 0 ? 0 : i - 1
+            } else {
+                nextIndex = (i < self.passcodeTextFields.count - 1) ? i + 1 : nil
             }
-        }        
+            
+            _ = nextIndex.map {
+                self.passcodeTextFields[$0].becomeFirstResponder()
+            }
+        }
     }
 }

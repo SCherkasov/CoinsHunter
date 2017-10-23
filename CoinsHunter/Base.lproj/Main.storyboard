@@ -118,81 +118,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-Cp-aVW">
-                                <rect key="frame" x="67" y="300" width="240" height="66"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-vy-LmP">
+                                <rect key="frame" x="87.5" y="308.5" width="200" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-5G-AmF">
-                                        <rect key="frame" x="8" y="8" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="tDS-KT-8M5"/>
-                                            <constraint firstAttribute="width" constant="50" id="vV8-0p-8gk"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="4PD-im-3hu"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-Ze-Nje">
-                                        <rect key="frame" x="66" y="8" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="TMQ-Rh-ZNd"/>
-                                            <constraint firstAttribute="height" constant="50" id="hgH-Kl-oou"/>
-                                        </constraints>
+                                        <rect key="frame" x="55" y="0.0" width="35" height="50"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-mm-bc3">
-                                        <rect key="frame" x="182" y="8" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="KVI-Cl-x7y"/>
-                                            <constraint firstAttribute="width" constant="50" id="h7I-Zc-FbY"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="9aT-6q-PWD"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-XZ-jU6">
-                                        <rect key="frame" x="124" y="8" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="W02-v3-FNr"/>
-                                            <constraint firstAttribute="width" constant="50" id="qAM-dc-Hgh"/>
-                                        </constraints>
+                                        <rect key="frame" x="110" y="0.0" width="35" height="50"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="QE5-5h-fXw"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-mm-bc3">
+                                        <rect key="frame" x="165" y="0.0" width="35" height="50"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="c4D-oH-Mta"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Kl6-5G-AmF" firstAttribute="leading" secondItem="lmX-Cp-aVW" secondAttribute="leading" constant="8" id="1Eg-dE-IcP"/>
-                                    <constraint firstItem="pFy-mm-bc3" firstAttribute="leading" secondItem="GaQ-XZ-jU6" secondAttribute="trailing" constant="8" id="3OI-0y-WEd"/>
-                                    <constraint firstItem="Kl6-5G-AmF" firstAttribute="top" secondItem="lmX-Cp-aVW" secondAttribute="top" constant="8" id="3Vo-ON-Ivy"/>
-                                    <constraint firstAttribute="bottom" secondItem="4YC-Ze-Nje" secondAttribute="bottom" constant="8" id="8AI-2z-M9V"/>
-                                    <constraint firstAttribute="height" constant="66" id="8qb-sR-tn5"/>
-                                    <constraint firstItem="pFy-mm-bc3" firstAttribute="top" secondItem="lmX-Cp-aVW" secondAttribute="top" constant="8" id="Afc-IB-sWD"/>
-                                    <constraint firstAttribute="bottom" secondItem="GaQ-XZ-jU6" secondAttribute="bottom" constant="8" id="BNQ-9I-N9Y"/>
-                                    <constraint firstItem="GaQ-XZ-jU6" firstAttribute="top" secondItem="lmX-Cp-aVW" secondAttribute="top" constant="8" id="LRm-Ix-wsV"/>
-                                    <constraint firstAttribute="trailing" secondItem="pFy-mm-bc3" secondAttribute="trailing" constant="8" id="Wvv-y4-aNV"/>
-                                    <constraint firstAttribute="bottom" secondItem="pFy-mm-bc3" secondAttribute="bottom" constant="8" id="XI9-ct-V2H"/>
-                                    <constraint firstItem="4YC-Ze-Nje" firstAttribute="top" secondItem="lmX-Cp-aVW" secondAttribute="top" constant="8" id="haN-aZ-jpb"/>
-                                    <constraint firstAttribute="width" constant="240" id="kww-e9-WwL"/>
-                                    <constraint firstItem="GaQ-XZ-jU6" firstAttribute="leading" secondItem="4YC-Ze-Nje" secondAttribute="trailing" constant="8" id="qkG-jJ-WDB"/>
-                                    <constraint firstItem="4YC-Ze-Nje" firstAttribute="leading" secondItem="Kl6-5G-AmF" secondAttribute="trailing" constant="8" id="xvG-pL-kLm"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kl6-5G-AmF" secondAttribute="bottom" constant="8" id="yDO-uH-9rV"/>
+                                    <constraint firstAttribute="width" constant="200" id="XXk-c0-maG"/>
+                                    <constraint firstAttribute="height" constant="50" id="of3-Pv-aD9"/>
                                 </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lmX-Cp-aVW" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="uND-KM-iTy"/>
-                            <constraint firstItem="lmX-Cp-aVW" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="ye5-2G-o0g"/>
+                            <constraint firstItem="Gm1-vy-LmP" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="94l-sq-BMX"/>
+                            <constraint firstItem="Gm1-vy-LmP" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="bYd-1O-PjW"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstLoginTextField" destination="Kl6-5G-AmF" id="3sQ-bN-fQe"/>
-                        <outlet property="fourthLoginTextField" destination="pFy-mm-bc3" id="ve4-FC-MtQ"/>
-                        <outlet property="secondLoginTextField" destination="4YC-Ze-Nje" id="CqK-r3-TMV"/>
-                        <outlet property="thirdLoginTextField" destination="GaQ-XZ-jU6" id="2QV-ex-r8y"/>
+                        <outletCollection property="passcodeTextFields" destination="Kl6-5G-AmF" collectionClass="NSMutableArray" id="bk8-du-0Mi"/>
+                        <outletCollection property="passcodeTextFields" destination="4YC-Ze-Nje" collectionClass="NSMutableArray" id="oZE-vF-LAp"/>
+                        <outletCollection property="passcodeTextFields" destination="GaQ-XZ-jU6" collectionClass="NSMutableArray" id="zgl-dY-B2L"/>
+                        <outletCollection property="passcodeTextFields" destination="pFy-mm-bc3" collectionClass="NSMutableArray" id="u3H-EO-KIe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
