@@ -41,7 +41,7 @@ class LoginPageViewController: UIViewController {
         _ = self.passcodeTextFields.map {
             $0.onDeleteBackwardStart = { textField in
                 if textField.text == nil || textField.text == "" {
-                    self.previousPasscodeTextField(preceeding: textField).map {
+                    _ = self.previousPasscodeTextField(preceeding: textField).map {
                         $0.becomeFirstResponder()
                     }
                 }
@@ -51,7 +51,7 @@ class LoginPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.passcodeTextFields[0].becomeFirstResponder()
+        _ = self.passcodeTextFields[0].becomeFirstResponder()
     }
     
     private func textField(offsetedBy offset:Int, from textField:DigitTextField)  -> DigitTextField? {
@@ -85,7 +85,7 @@ class LoginPageViewController: UIViewController {
                 passcodeTextField.text = passcode.characters.first.map { String($0) }
                 
                 if let nextPasscodeTextField = self.nextPasscodeTextField(following: passcodeTextField) {
-                    nextPasscodeTextField.becomeFirstResponder()
+                    _ = nextPasscodeTextField.becomeFirstResponder()
                     
                     let newValue = String(passcode.characters.dropFirst())
                     if (!newValue.isEmpty) {
