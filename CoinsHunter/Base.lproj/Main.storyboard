@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="798-lw-NJo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NZf-um-eAm"/>
                             <constraint firstItem="c9f-sM-Np5" firstAttribute="top" secondItem="798-lw-NJo" secondAttribute="bottom" constant="65" id="RYa-M8-MlA"/>
@@ -118,57 +118,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-vy-LmP">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-vy-LmP">
                                 <rect key="frame" x="87.5" y="308.5" width="200" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-5G-AmF" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-5G-AmF" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="ele-hf-nZo"/>
-                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="4PD-im-3hu"/>
-                                        </connections>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="bH7-PW-Umb"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-Ze-Nje" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-Ze-Nje" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
                                         <rect key="frame" x="55" y="0.0" width="35" height="50"/>
                                         <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="bFM-IV-ByI"/>
-                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="9aT-6q-PWD"/>
-                                        </connections>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-XZ-jU6" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-XZ-jU6" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
                                         <rect key="frame" x="110" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="aZW-LP-PIO"/>
-                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="QE5-5h-fXw"/>
-                                        </connections>
+                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-mm-bc3" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-mm-bc3" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
                                         <rect key="frame" x="165" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="onEditingDidBegin:" destination="AVd-kP-wbI" eventType="editingDidBegin" id="mff-xa-cDt"/>
-                                            <action selector="onEditingDidChange:" destination="AVd-kP-wbI" eventType="editingChanged" id="c4D-oH-Mta"/>
-                                        </connections>
+                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="GaQ-XZ-jU6" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="Myz-nw-GON"/>
                                     <constraint firstAttribute="width" constant="200" id="XXk-c0-maG"/>
+                                    <constraint firstItem="4YC-Ze-Nje" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="f4B-QC-4s8"/>
                                     <constraint firstAttribute="height" constant="50" id="of3-Pv-aD9"/>
+                                    <constraint firstItem="pFy-mm-bc3" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="qDj-dx-JWZ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Gm1-vy-LmP" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="94l-sq-BMX"/>
                             <constraint firstItem="Gm1-vy-LmP" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="bYd-1O-PjW"/>

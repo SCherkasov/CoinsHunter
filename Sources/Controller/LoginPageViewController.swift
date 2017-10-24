@@ -19,7 +19,7 @@ func concat(_ strings:[String?]) -> String? {
     }
 }
 
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var passcodeTextFields: [DigitTextField]!
     
@@ -40,12 +40,14 @@ class LoginPageViewController: UIViewController {
     override func viewDidLoad() {
         _ = self.passcodeTextFields.map {
             $0.onDeleteBackwardStart = { textField in
-                if textField.text == nil || textField.text == "" {
-                    _ = self.previousPasscodeTextField(preceeding: textField).map {
-                        $0.becomeFirstResponder()
-                    }
+                textField.text = ""
+                
+                _ = self.previousPasscodeTextField(preceeding: textField).map {
+                    $0.becomeFirstResponder()
                 }
             }
+            
+            $0.delegate = self
         }
     }
     
@@ -72,30 +74,45 @@ class LoginPageViewController: UIViewController {
         return self.nextPasscodeTextField(following: textField) == nil
     }
     
-    @IBAction func onEditingDidBegin(_ textField: DigitTextField) {
+    private func populatePasscodeTextField(_ passcodeTextField: DigitTextField, with text: String) -> Void {
+        passcodeTextField.text = text.characters.first.map { String($0) }
+        if let nextPasscodeTextField = self.nextPasscodeTextField(following: passcodeTextField) {
+            _ = nextPasscodeTextField.becomeFirstResponder()
+            
+            let remainderText = String(text.characters.dropFirst())
+            if !remainderText.isEmpty {
+                self.populatePasscodeTextField(nextPasscodeTextField, with: remainderText)
+            }
+        } else {
+            _ = passcodeTextField.resignFirstResponder()
+        }
     }
-
-    @IBAction func onEditingDidChange(_ passcodeTextField: DigitTextField) {
-        passcodeTextField.text.map { passcode in
-            if (passcode == "") {
-                _ = self.previousPasscodeTextField(preceeding: passcodeTextField).map {
-                    $0.becomeFirstResponder()
-                }
-            } else {
-                passcodeTextField.text = passcode.characters.first.map { String($0) }
-                
-                if let nextPasscodeTextField = self.nextPasscodeTextField(following: passcodeTextField) {
-                    _ = nextPasscodeTextField.becomeFirstResponder()
-                    
-                    let newValue = String(passcode.characters.dropFirst())
-                    if (!newValue.isEmpty) {
-                        nextPasscodeTextField.text = newValue
-                        onEditingDidChange(nextPasscodeTextField)
-                    }
-                } else {
-                    self.view.endEditing(true)
-                }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool
+    {
+        (textField as? DigitTextField).map {[weak self] textField in
+            self.map {
+                $0.populatePasscodeTextField(textField, with: string)
             }
         }
+        
+        if string == "" {
+            textField.becomeFirstResponder()
+        }
+        
+        return false;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        // Shitty workaround. Hi, Apple!
+        textField.setNeedsLayout()
+        textField.layoutIfNeeded()
+        
+        return false
     }
 }

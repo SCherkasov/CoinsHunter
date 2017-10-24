@@ -29,7 +29,7 @@ class DigitTextField: UITextField {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.tintColor = UIColor.clear
+        self.tintColor = UIColor.red
     }
     
     override func becomeFirstResponder() -> Bool {
