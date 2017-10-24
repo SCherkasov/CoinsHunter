@@ -21,7 +21,7 @@ func concat(_ strings:[String?]) -> String? {
 
 class LoginPageViewController: UIViewController {
     
-    @IBOutlet var passcodeTextFields: [UITextField]!
+    @IBOutlet var passcodeTextFields: [DigitTextField]!
     
     var passcode: String? {
         set {
@@ -37,33 +37,45 @@ class LoginPageViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        _ = self.passcodeTextFields.map {
+            $0.onDeleteBackwardStart = { textField in
+                if textField.text == nil || textField.text == "" {
+                    self.previousPasscodeTextField(preceeding: textField).map {
+                        $0.becomeFirstResponder()
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.passcodeTextFields[0].becomeFirstResponder()
     }
     
-    private func textField(offsetedBy offset:Int, from textField:UITextField)  -> UITextField? {
+    private func textField(offsetedBy offset:Int, from textField:DigitTextField)  -> DigitTextField? {
         return self.passcodeTextFields.index(of: textField)
             .map { $0 + offset }
             .flatMap { $0 < self.passcodeTextFields.count && $0 >= 0 ? self.passcodeTextFields[$0] : nil }
     }
     
-    private func nextPasscodeTextField(following textField: UITextField) -> UITextField? {
+    private func nextPasscodeTextField(following textField: DigitTextField) -> DigitTextField? {
         return self.textField(offsetedBy: +1, from: textField)
     }
 
-    private func previousPasscodeTextField(preceeding textField: UITextField) -> UITextField? {
+    private func previousPasscodeTextField(preceeding textField: DigitTextField) -> DigitTextField? {
         return self.textField(offsetedBy: -1, from: textField)
     }
     
-    private func isLastTextField(textField: UITextField) -> Bool {
+    private func isLastTextField(textField: DigitTextField) -> Bool {
         return self.nextPasscodeTextField(following: textField) == nil
     }
     
-    @IBAction func onEditingDidBegin(_ textField: UITextField) {
+    @IBAction func onEditingDidBegin(_ textField: DigitTextField) {
     }
-    
-    @IBAction func onEditingDidChange(_ passcodeTextField: UITextField) {
+
+    @IBAction func onEditingDidChange(_ passcodeTextField: DigitTextField) {
         passcodeTextField.text.map { passcode in
             if (passcode == "") {
                 _ = self.previousPasscodeTextField(preceeding: passcodeTextField).map {

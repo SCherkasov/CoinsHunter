@@ -17,6 +17,7 @@
 		E09908781F9E7A1A00316587 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908731F9E7A1A00316587 /* Slide.swift */; };
 		E09908791F9E7A1A00316587 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09908741F9E7A1A00316587 /* Slide.xib */; };
 		E099087C1F9E7ABC00316587 /* BlinkingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */; };
+		E099087E1F9EB6D600316587 /* DigitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099087D1F9EB6D600316587 /* DigitTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E09908731F9E7A1A00316587 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		E09908741F9E7A1A00316587 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlinkingLabel.swift; sourceTree = "<group>"; };
+		E099087D1F9EB6D600316587 /* DigitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				E09908731F9E7A1A00316587 /* Slide.swift */,
 				E09908741F9E7A1A00316587 /* Slide.xib */,
+				E099087D1F9EB6D600316587 /* DigitTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E099087E1F9EB6D600316587 /* DigitTextField.swift in Sources */,
 				E09908761F9E7A1A00316587 /* LoginPageViewController.swift in Sources */,
 				E09908771F9E7A1A00316587 /* SecondPageViewController.swift in Sources */,
 				E099087C1F9E7ABC00316587 /* BlinkingLabel.swift in Sources */,

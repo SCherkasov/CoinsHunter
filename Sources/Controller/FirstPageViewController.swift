@@ -19,6 +19,5 @@ class FirstPageViewController: UIViewController {
         super.viewDidLoad()
         
         self.blinkingLabel.startBlinking()
-        
     }
 }
