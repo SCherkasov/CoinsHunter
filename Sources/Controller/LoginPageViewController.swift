@@ -106,13 +106,4 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         
         return false;
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        // Shitty workaround. Hi, Apple!
-        textField.setNeedsLayout()
-        textField.layoutIfNeeded()
-        
-        return false
-    }
 }

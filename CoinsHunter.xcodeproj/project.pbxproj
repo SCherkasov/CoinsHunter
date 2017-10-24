@@ -16,9 +16,12 @@
 		E09908771F9E7A1A00316587 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908701F9E7A1A00316587 /* SecondPageViewController.swift */; };
 		E09908781F9E7A1A00316587 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908731F9E7A1A00316587 /* Slide.swift */; };
 		E09908791F9E7A1A00316587 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09908741F9E7A1A00316587 /* Slide.xib */; };
-		E099087C1F9E7ABC00316587 /* BlinkingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */; };
-		E099087E1F9EB6D600316587 /* DigitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099087D1F9EB6D600316587 /* DigitTextField.swift */; };
-		E09908811F9F557900316587 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908801F9F557900316587 /* UITextFieldExtension.swift */; };
+		E09908951F9F6BD700316587 /* BlinkingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099088E1F9F6BD700316587 /* BlinkingLabel.swift */; };
+		E09908961F9F6BD700316587 /* DigitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908901F9F6BD700316587 /* DigitTextField.swift */; };
+		E09908971F9F6BD700316587 /* PasscodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908911F9F6BD700316587 /* PasscodeField.swift */; };
+		E09908981F9F6BD700316587 /* PasscodeFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908921F9F6BD700316587 /* PasscodeFieldView.swift */; };
+		E09908991F9F6BD700316587 /* PasscodeFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09908931F9F6BD700316587 /* PasscodeFieldView.xib */; };
+		E099089A1F9F6BD700316587 /* PasscodeFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09908941F9F6BD700316587 /* PasscodeFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +36,12 @@
 		E09908701F9E7A1A00316587 /* SecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		E09908731F9E7A1A00316587 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		E09908741F9E7A1A00316587 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
-		E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlinkingLabel.swift; sourceTree = "<group>"; };
-		E099087D1F9EB6D600316587 /* DigitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitTextField.swift; sourceTree = "<group>"; };
-		E09908801F9F557900316587 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		E099088E1F9F6BD700316587 /* BlinkingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlinkingLabel.swift; sourceTree = "<group>"; };
+		E09908901F9F6BD700316587 /* DigitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitTextField.swift; sourceTree = "<group>"; };
+		E09908911F9F6BD700316587 /* PasscodeField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeField.swift; sourceTree = "<group>"; };
+		E09908921F9F6BD700316587 /* PasscodeFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeFieldView.swift; sourceTree = "<group>"; };
+		E09908931F9F6BD700316587 /* PasscodeFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeFieldView.xib; sourceTree = "<group>"; };
+		E09908941F9F6BD700316587 /* PasscodeFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +117,6 @@
 			children = (
 				E09908731F9E7A1A00316587 /* Slide.swift */,
 				E09908741F9E7A1A00316587 /* Slide.xib */,
-				E099087D1F9EB6D600316587 /* DigitTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,18 +124,38 @@
 		E099087A1F9E7AA400316587 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				E099087F1F9F556C00316587 /* Extensions */,
-				E099087B1F9E7ABC00316587 /* BlinkingLabel.swift */,
+				E09908821F9F64D700316587 /* Controls */,
 			);
 			path = Library;
 			sourceTree = "<group>";
 		};
-		E099087F1F9F556C00316587 /* Extensions */ = {
+		E09908821F9F64D700316587 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				E09908801F9F557900316587 /* UITextFieldExtension.swift */,
+				E099088D1F9F6BD700316587 /* BlinkingLabel */,
+				E099088F1F9F6BD700316587 /* PasscodeField */,
 			);
-			path = Extensions;
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		E099088D1F9F6BD700316587 /* BlinkingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				E099088E1F9F6BD700316587 /* BlinkingLabel.swift */,
+			);
+			path = BlinkingLabel;
+			sourceTree = "<group>";
+		};
+		E099088F1F9F6BD700316587 /* PasscodeField */ = {
+			isa = PBXGroup;
+			children = (
+				E09908901F9F6BD700316587 /* DigitTextField.swift */,
+				E09908911F9F6BD700316587 /* PasscodeField.swift */,
+				E09908921F9F6BD700316587 /* PasscodeFieldView.swift */,
+				E09908931F9F6BD700316587 /* PasscodeFieldView.xib */,
+				E09908941F9F6BD700316587 /* PasscodeFieldViewController.swift */,
+			);
+			path = PasscodeField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +222,7 @@
 				8A38CD9E1F9CE4810014AFD4 /* Assets.xcassets in Resources */,
 				8A38CD9C1F9CE4810014AFD4 /* Main.storyboard in Resources */,
 				E09908791F9E7A1A00316587 /* Slide.xib in Resources */,
+				E09908991F9F6BD700316587 /* PasscodeFieldView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,11 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E099087E1F9EB6D600316587 /* DigitTextField.swift in Sources */,
-				E09908811F9F557900316587 /* UITextFieldExtension.swift in Sources */,
+				E09908961F9F6BD700316587 /* DigitTextField.swift in Sources */,
 				E09908761F9E7A1A00316587 /* LoginPageViewController.swift in Sources */,
+				E09908981F9F6BD700316587 /* PasscodeFieldView.swift in Sources */,
+				E099089A1F9F6BD700316587 /* PasscodeFieldViewController.swift in Sources */,
 				E09908771F9E7A1A00316587 /* SecondPageViewController.swift in Sources */,
-				E099087C1F9E7ABC00316587 /* BlinkingLabel.swift in Sources */,
+				E09908951F9F6BD700316587 /* BlinkingLabel.swift in Sources */,
+				E09908971F9F6BD700316587 /* PasscodeField.swift in Sources */,
 				E09908751F9E7A1A00316587 /* FirstPageViewController.swift in Sources */,
 				8A38CD971F9CE4810014AFD4 /* AppDelegate.swift in Sources */,
 				E09908781F9E7A1A00316587 /* Slide.swift in Sources */,
