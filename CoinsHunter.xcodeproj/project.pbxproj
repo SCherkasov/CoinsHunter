@@ -149,11 +149,11 @@
 		E099088F1F9F6BD700316587 /* PasscodeField */ = {
 			isa = PBXGroup;
 			children = (
-				E09908901F9F6BD700316587 /* DigitTextField.swift */,
 				E09908911F9F6BD700316587 /* PasscodeField.swift */,
 				E09908921F9F6BD700316587 /* PasscodeFieldView.swift */,
 				E09908931F9F6BD700316587 /* PasscodeFieldView.xib */,
 				E09908941F9F6BD700316587 /* PasscodeFieldViewController.swift */,
+				E09908901F9F6BD700316587 /* DigitTextField.swift */,
 			);
 			path = PasscodeField;
 			sourceTree = "<group>";

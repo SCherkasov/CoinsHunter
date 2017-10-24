@@ -37,7 +37,5 @@ class PasscodeField : UIView {
     
     
     // MARK: Private
-
-    
     
 }
