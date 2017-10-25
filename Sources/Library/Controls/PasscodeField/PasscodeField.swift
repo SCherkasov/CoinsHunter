@@ -14,7 +14,10 @@ class PasscodeField : UIView {
     public var digitsCount: UInt = 4
     
     @IBInspectable
-    public var passcode: String? 
+    public var spacing:UInt = 10
+    
+    @IBInspectable
+    public var passcode: String?
     
     var passcodeFieldViewController: PasscodeFieldViewController? {
         didSet {

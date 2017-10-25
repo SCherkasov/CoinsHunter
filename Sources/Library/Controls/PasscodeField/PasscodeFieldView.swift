@@ -9,16 +9,12 @@
 import UIKit
 
 class PasscodeFieldView: UIView {
-    @IBOutlet var stackView: UIStackView!
+    
     @IBOutlet var passcodeTextFields: [DigitTextField]!
     
-    public var digitsCount: UInt = 4 {
-        didSet {
-            
-        }
-    }
+    public var digitsCount: UInt = 4
     
-    public var spacing: Float = 0
+    public var spacing: Float = 25
     
     public var passcode: String? {
         set {
@@ -34,6 +30,18 @@ class PasscodeFieldView: UIView {
         get {
             return concat(self.passcodeTextFields.map { $0.text })
         }
+    }
+    
+    private let generateDigitTextField = { (frame: CGRect) -> DigitTextField in
+        let digitTextField = DigitTextField.init()
+        digitTextField.frame = frame
+        digitTextField.textAlignment = NSTextAlignment.center
+        digitTextField.borderStyle = UITextBorderStyle.roundedRect
+        digitTextField.isSecureTextEntry = true
+        digitTextField.placeholder = "-"
+        digitTextField.textColor = UIColor.red
+        
+        return digitTextField
     }
     
     override init(frame: CGRect) {
@@ -52,9 +60,21 @@ class PasscodeFieldView: UIView {
         self.setup()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let frames = self.rectFramesForDigits(in: self.frame)
+        
+        for index in 0..<self.digitsCount {
+            if let passcodeTextFields = self.passcodeTextFields {
+                let idx = Int.init(index)
+                
+                passcodeTextFields[idx].frame = frames[idx]
+            }
+        }
+    }
+    
     // MARK: Private
     private func setup() {
-        self.stackView = UIStackView.init()
         self.passcodeTextFields = [];
         self.backgroundColor = UIColor.clear
         
@@ -62,37 +82,39 @@ class PasscodeFieldView: UIView {
     }
     
     private func setupPasscodeTextFields() {
-        let stackView = UIStackView.init()
-        stackView.distribution = UIStackViewDistribution.equalSpacing
-        stackView.alignment = UIStackViewAlignment.center
-        stackView.axis = UILayoutConstraintAxis.horizontal
-        stackView.spacing = CGFloat.init(self.spacing)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.frame = CGRect.zero
- 
-        self.stackView = stackView
-        self.addSubview(self.stackView)
-        
-        let viewsDict = ["view": stackView]
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: viewsDict))
-        
-        _ = Array(0..<self.digitsCount).map { _ in
-            let digitTextField = DigitTextField.init()
-            digitTextField.frame = CGRect.zero
+        /*
+        let label = UILabel.init()
+        label.text = "Hello"
+        label.frame = CGRect.init(x: 0, y: 0, width: 300, height: 100)
+        self.addSubview(label)
+        */
+        _ = self.rectFramesForDigits(in: CGRect.zero).map { frame in
             
-            digitTextField.backgroundColor = UIColor.green
+            let digitTextField = self.generateDigitTextField(self.frame)
             
             self.passcodeTextFields.append(digitTextField)
             
-            stackView.addArrangedSubview(digitTextField)
+            self.addSubview(digitTextField)
         }
+    }
+    
+    private func rectFramesForDigits(in frame:CGRect) -> [CGRect] {
+        let width = CGFloat.init(frame.width) / CGFloat.init(self.digitsCount) - CGFloat(self.spacing)
+        let height = CGFloat.init(frame.height)
+        let spacing = CGFloat.init(self.spacing)
+        
+        var frames: [CGRect] = []
+        _ = Array(0..<self.digitsCount).map { i in
+            let index = CGFloat(i)
+            
+            let rect = CGRect.init(x: (width + spacing) * index,
+                                   y: 0,
+                                   width: width,
+                                   height: height)
+            
+            frames.append(rect)
+        }
+        
+        return frames
     }
 }
