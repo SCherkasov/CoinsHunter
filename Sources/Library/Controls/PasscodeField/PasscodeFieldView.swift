@@ -56,29 +56,43 @@ class PasscodeFieldView: UIView {
     private func setup() {
         self.stackView = UIStackView.init()
         self.passcodeTextFields = [];
+        self.backgroundColor = UIColor.clear
+        
+        self.setupPasscodeTextFields()
     }
     
     private func setupPasscodeTextFields() {
-        _ = self.passcodeTextFields.map { textField in
-            textField.removeFromSuperview()
-        }
-        
-        self.stackView.removeFromSuperview()
-        
         let stackView = UIStackView.init()
         stackView.distribution = UIStackViewDistribution.equalSpacing
         stackView.alignment = UIStackViewAlignment.center
+        stackView.axis = UILayoutConstraintAxis.horizontal
         stackView.spacing = CGFloat.init(self.spacing)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.frame = CGRect.zero
+ 
+        self.stackView = stackView
+        self.addSubview(self.stackView)
         
-        self.passcodeTextFields = []
-       
-        /*
-        _ = [0...count-1].map { _ in
-            var digitTextField = DigitTextField.init()
+        let viewsDict = ["view": stackView]
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
+                                                      options: [],
+                                                      metrics: nil,
+                                                      views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]-0-|",
+                                                      options: [],
+                                                      metrics: nil,
+                                                      views: viewsDict))
+        
+        _ = Array(0..<self.digitsCount).map { _ in
+            let digitTextField = DigitTextField.init()
+            digitTextField.frame = CGRect.zero
             
-            self.passcodeTextFields.append(DigitTextField)
+            digitTextField.backgroundColor = UIColor.green
+            
+            self.passcodeTextFields.append(digitTextField)
+            
+            stackView.addArrangedSubview(digitTextField)
         }
-         */
-        
     }
 }

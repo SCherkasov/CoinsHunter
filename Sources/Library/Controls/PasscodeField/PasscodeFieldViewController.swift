@@ -6,4 +6,11 @@
 //  Copyright © 2017 Stanislav Cherkasov. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PasscodeFieldViewController: UIViewController {
+    
+    override func loadView() {
+        self.view = PasscodeFieldView.init()
+    }
+}

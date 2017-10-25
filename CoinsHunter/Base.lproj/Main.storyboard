@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AVd-kP-wbI">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="798-lw-NJo">
-                                <rect key="frame" x="92" y="247" width="190" height="172"/>
+                                <rect key="frame" x="112" y="282" width="190" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="6Az-Jv-WZV"/>
                                     <constraint firstAttribute="width" constant="190" id="sCR-kM-EGG"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tab to continue..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9f-sM-Np5" customClass="BlinkingLabel" customModule="CoinsHunter" customModuleProvider="target">
-                                <rect key="frame" x="108" y="484" width="159" height="23"/>
+                                <rect key="frame" x="128" y="519" width="159" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="48m-NC-UGQ"/>
                                 </constraints>
@@ -68,14 +68,14 @@
                         <viewControllerLayoutGuide type="bottom" id="v4d-xm-oZB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sKG-Pj-MN7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VgM-2J-QPh">
-                                <rect key="frame" x="80" y="570" width="215" height="37"/>
+                                <rect key="frame" x="80" y="639" width="254" height="37"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilW-d0-eoA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,11 +115,11 @@
                         <viewControllerLayoutGuide type="bottom" id="jDY-Hs-Sig"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="s4p-rZ-jNS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-vy-LmP">
-                                <rect key="frame" x="87.5" y="308.5" width="200" height="50"/>
+                                <rect key="frame" x="107" y="343" width="200" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-5G-AmF" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
@@ -157,6 +157,16 @@
                                     <constraint firstItem="pFy-mm-bc3" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="qDj-dx-JWZ"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-8c-vGI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
+                                <rect key="frame" x="67" y="426" width="240" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
