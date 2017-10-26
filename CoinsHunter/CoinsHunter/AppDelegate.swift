@@ -4,7 +4,7 @@
 //
 //  Created by Stanislav Cherkasov on 22.10.17.
 //  Copyright © 2017 Stanislav Cherkasov. All rights reserved.
-// second-view-controller branch
+// second-view-controller branch + 1
 
 import UIKit
 
