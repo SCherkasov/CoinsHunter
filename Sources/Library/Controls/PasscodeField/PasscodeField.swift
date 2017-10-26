@@ -14,7 +14,7 @@ class PasscodeField : UIView {
     public var digitsCount: UInt = 4
     
     @IBInspectable
-    public var spacing: Float = 10
+    public var spacing: CGFloat = 10
     
     @IBInspectable
     public var passcode: String?
@@ -49,6 +49,12 @@ class PasscodeField : UIView {
         super.awakeFromNib()
         
         self.setup()
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        return self.passcodeFieldViewController.map {
+            $0.activateFirstDigitBox()
+        } ?? false
     }
     
     // MARK: Private

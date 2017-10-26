@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -118,71 +119,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-vy-LmP">
-                                <rect key="frame" x="107" y="343" width="200" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-5G-AmF" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="bH7-PW-Umb"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-Ze-Nje" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-XZ-jU6" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
-                                        <rect key="frame" x="110" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="_" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-mm-bc3" customClass="DigitTextField" customModule="CoinsHunter" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="0.0" width="35" height="50"/>
-                                        <color key="textColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-8c-vGI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
+                                <rect key="frame" x="107.66666666666669" y="343" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="GaQ-XZ-jU6" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="Myz-nw-GON"/>
-                                    <constraint firstAttribute="width" constant="200" id="XXk-c0-maG"/>
-                                    <constraint firstItem="4YC-Ze-Nje" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="f4B-QC-4s8"/>
-                                    <constraint firstAttribute="height" constant="50" id="of3-Pv-aD9"/>
-                                    <constraint firstItem="pFy-mm-bc3" firstAttribute="width" secondItem="Kl6-5G-AmF" secondAttribute="width" id="qDj-dx-JWZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="RgD-Yv-Kfq"/>
                                 </constraints>
-                            </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-8c-vGI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
-                                <rect key="frame" x="96" y="437" width="223" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="windowSpacing">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="passcode" value="12345"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Gm1-vy-LmP" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="94l-sq-BMX"/>
-                            <constraint firstItem="Gm1-vy-LmP" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="bYd-1O-PjW"/>
+                            <constraint firstItem="zy2-8c-vGI" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="c0c-tV-IOD"/>
+                            <constraint firstItem="zy2-8c-vGI" firstAttribute="width" secondItem="s4p-rZ-jNS" secondAttribute="height" multiplier="25:92" id="dtA-6q-1is"/>
+                            <constraint firstItem="zy2-8c-vGI" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="haJ-Lc-3XL"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outletCollection property="passcodeTextFields" destination="Kl6-5G-AmF" collectionClass="NSMutableArray" id="bk8-du-0Mi"/>
-                        <outletCollection property="passcodeTextFields" destination="4YC-Ze-Nje" collectionClass="NSMutableArray" id="oZE-vF-LAp"/>
-                        <outletCollection property="passcodeTextFields" destination="GaQ-XZ-jU6" collectionClass="NSMutableArray" id="zgl-dY-B2L"/>
-                        <outletCollection property="passcodeTextFields" destination="pFy-mm-bc3" collectionClass="NSMutableArray" id="u3H-EO-KIe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
