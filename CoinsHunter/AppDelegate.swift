@@ -3,7 +3,7 @@
 //  CoinsHunter
 //
 //  Created by Stanislav Cherkasov on 22.10.17.
-//  Copyright © 2017 Stanislav Cherkasov. All rights reserved.
+//  Copyright © 2017 Stanislav Cherkasov. All rights reserved. ++++1
 //
 
 import UIKit
