@@ -3,7 +3,7 @@
 //  CoinsHunter
 //
 //  Created by Stanislav Cherkasov on 22.10.17.
-
+// + Ievgen Gavrysh
 
 import UIKit
 
