@@ -9,8 +9,34 @@
 import UIKit
 
 class PasscodeFieldViewController: UIViewController {
+
+    private var passcodeFieldView: PasscodeFieldView?
+    
+    public var digitsCount: UInt = 1 {
+        didSet {
+            self.passcodeFieldView?.digitsCount = self.digitsCount
+        }
+    }
+    
+    public var spacing: Float = 0 {
+        didSet {
+            self.passcodeFieldView?.digitsCount = self.digitsCount
+        }
+    }
+    
+    public var passcode: String? {
+        didSet {
+            self.passcodeFieldView?.passcode = self.passcode
+        }
+    }
     
     override func loadView() {
-        self.view = PasscodeFieldView.init()
+        let passcodeFieldView = PasscodeFieldView.init()
+        passcodeFieldView.digitsCount = self.digitsCount
+        passcodeFieldView.spacing = self.spacing
+        passcodeFieldView.passcode = self.passcode
+        
+        self.view = passcodeFieldView
+        self.passcodeFieldView = passcodeFieldView
     }
 }

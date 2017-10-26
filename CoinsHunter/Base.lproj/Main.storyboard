@@ -158,13 +158,17 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-8c-vGI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
-                                <rect key="frame" x="67" y="426" width="286" height="121"/>
+                                <rect key="frame" x="96" y="437" width="223" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="passcode" value="12345"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

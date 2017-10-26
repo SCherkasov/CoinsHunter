@@ -12,19 +12,28 @@ class PasscodeFieldView: UIView {
     
     @IBOutlet var passcodeTextFields: [DigitTextField]!
     
-    public var digitsCount: UInt = 4
+    public var digitsCount: UInt = 1 {
+        didSet {
+            self.setup()
+        }
+    }
     
-    public var spacing: Float = 25
+    public var spacing: Float = 0 {
+        didSet {
+            self.setup()
+        }
+    }
     
     public var passcode: String? {
         set {
             var i = 0
             _ = newValue?.characters.map {
-                self.passcodeTextFields[i].text = String($0)
+                if i >= 0 && i < self.passcodeTextFields.count {
+                     self.passcodeTextFields[i].text = String($0)
+                }
+               
                 i += 1
             }
-            
-            self.setNeedsLayout()
         }
         
         get {
@@ -75,6 +84,12 @@ class PasscodeFieldView: UIView {
     
     // MARK: Private
     private func setup() {
+        if self.passcodeTextFields != nil {
+            _ = self.passcodeTextFields.map {
+                $0.removeFromSuperview()
+            }
+        }
+        
         self.passcodeTextFields = [];
         self.backgroundColor = UIColor.clear
         
@@ -88,6 +103,7 @@ class PasscodeFieldView: UIView {
         label.frame = CGRect.init(x: 0, y: 0, width: 300, height: 100)
         self.addSubview(label)
         */
+        
         _ = self.rectFramesForDigits(in: CGRect.zero).map { frame in
             
             let digitTextField = self.generateDigitTextField(self.frame)

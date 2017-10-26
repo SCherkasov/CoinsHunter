@@ -14,7 +14,7 @@ class PasscodeField : UIView {
     public var digitsCount: UInt = 4
     
     @IBInspectable
-    public var spacing:UInt = 10
+    public var spacing: Float = 10
     
     @IBInspectable
     public var passcode: String?
@@ -43,9 +43,6 @@ class PasscodeField : UIView {
         super.init(coder: aDecoder)
     }
     
-    deinit {
-    }
-    
     // MARK: Public
     
     override func awakeFromNib() {
@@ -58,5 +55,10 @@ class PasscodeField : UIView {
     
     func setup() {
         self.passcodeFieldViewController = PasscodeFieldViewController.init()
+        self.passcodeFieldViewController.map {
+            $0.digitsCount = self.digitsCount
+            $0.spacing = self.spacing
+            $0.passcode = self.passcode
+        }
     }
 }

@@ -148,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				E09908911F9F6BD700316587 /* PasscodeField.swift */,
-				E09908921F9F6BD700316587 /* PasscodeFieldView.swift */,
 				E09908941F9F6BD700316587 /* PasscodeFieldViewController.swift */,
+				E09908921F9F6BD700316587 /* PasscodeFieldView.swift */,
 				E09908901F9F6BD700316587 /* DigitTextField.swift */,
 			);
 			path = PasscodeField;
