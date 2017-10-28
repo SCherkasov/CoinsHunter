@@ -30,7 +30,7 @@
                                 <state key="normal" image="1euro"/>
                                 <connections>
                                     <action selector="oneEuroStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikS-3g-zu7"/>
-                                    <segue destination="jv0-sp-YPi" kind="show" id="L6b-Gf-fgS"/>
+                                    <segue destination="XR3-0B-XAc" kind="show" id="DDa-NX-OYV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tab to continue..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9f-sM-Np5">
@@ -60,51 +60,51 @@
             <point key="canvasLocation" x="148" y="215"/>
         </scene>
         <!--Second Page View Controller-->
-        <scene sceneID="f5Q-3x-fHF">
+        <scene sceneID="7vV-cX-oEa">
             <objects>
-                <viewController id="BzZ-aP-iPo" customClass="SecondPageViewController" customModule="CoinsHunter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="376-0L-KGa" customClass="SecondPageViewController" customModule="CoinsHunter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FRh-Nn-XQV"/>
-                        <viewControllerLayoutGuide type="bottom" id="v4d-xm-oZB"/>
+                        <viewControllerLayoutGuide type="top" id="LxQ-xg-tqt"/>
+                        <viewControllerLayoutGuide type="bottom" id="HJp-2W-DvH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sKG-Pj-MN7">
+                    <view key="view" contentMode="scaleToFill" id="mFD-8I-CjT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VgM-2J-QPh">
-                                <rect key="frame" x="80" y="570" width="215" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="f4k-pk-cg4">
+                                <rect key="frame" x="168" y="602" width="39" height="37"/>
                             </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilW-d0-eoA">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbQ-Y8-2oa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="v4d-xm-oZB" firstAttribute="top" secondItem="ilW-d0-eoA" secondAttribute="bottom" id="CQ3-zD-BQg"/>
-                            <constraint firstItem="ilW-d0-eoA" firstAttribute="top" secondItem="sKG-Pj-MN7" secondAttribute="top" id="ZVf-2w-ExN"/>
-                            <constraint firstAttribute="trailing" secondItem="ilW-d0-eoA" secondAttribute="trailing" id="fHO-8f-mUo"/>
-                            <constraint firstAttribute="trailing" secondItem="VgM-2J-QPh" secondAttribute="trailing" constant="80" id="kvg-9o-KiU"/>
-                            <constraint firstItem="ilW-d0-eoA" firstAttribute="leading" secondItem="sKG-Pj-MN7" secondAttribute="leading" id="p3k-pc-v3U"/>
-                            <constraint firstItem="v4d-xm-oZB" firstAttribute="top" secondItem="VgM-2J-QPh" secondAttribute="bottom" constant="60" id="psd-bR-8gO"/>
-                            <constraint firstItem="VgM-2J-QPh" firstAttribute="leading" secondItem="sKG-Pj-MN7" secondAttribute="leading" constant="80" id="w9s-8Z-ccK"/>
+                            <constraint firstItem="XbQ-Y8-2oa" firstAttribute="top" secondItem="mFD-8I-CjT" secondAttribute="top" id="CbO-Fd-xYw"/>
+                            <constraint firstItem="f4k-pk-cg4" firstAttribute="leading" secondItem="mFD-8I-CjT" secondAttribute="leading" constant="168" id="Fwa-rS-xlw"/>
+                            <constraint firstItem="XbQ-Y8-2oa" firstAttribute="leading" secondItem="mFD-8I-CjT" secondAttribute="leading" id="WEv-kV-96Z"/>
+                            <constraint firstItem="HJp-2W-DvH" firstAttribute="top" secondItem="f4k-pk-cg4" secondAttribute="bottom" constant="28" id="ZpK-ei-bOw"/>
+                            <constraint firstAttribute="trailing" secondItem="XbQ-Y8-2oa" secondAttribute="trailing" id="aDo-5V-1jb"/>
+                            <constraint firstItem="HJp-2W-DvH" firstAttribute="top" secondItem="XbQ-Y8-2oa" secondAttribute="bottom" id="d1o-jg-VeB"/>
+                            <constraint firstAttribute="trailing" secondItem="f4k-pk-cg4" secondAttribute="trailing" constant="168" id="oKd-H7-cEa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8q2-l4-RZO">
-                        <barButtonItem key="rightBarButtonItem" title="Skip" id="dsd-ql-Vsg">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <navigationItem key="navigationItem" id="GaJ-un-FAh">
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="jjU-jX-YTn">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="AVd-kP-wbI" kind="show" id="Gyt-iK-w3s"/>
+                                <segue destination="AVd-kP-wbI" kind="show" id="VRM-ji-i7x"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pageControl" destination="VgM-2J-QPh" id="WZh-dp-ExN"/>
-                        <outlet property="slideScrollView" destination="ilW-d0-eoA" id="Ycn-Jf-4nl"/>
+                        <outlet property="mainScrollView" destination="XbQ-Y8-2oa" id="Fth-4w-NsZ"/>
+                        <outlet property="pageControlS" destination="f4k-pk-cg4" id="aPS-7B-s8Q"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BjE-re-1mB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAQ-5U-sMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="215"/>
+            <point key="canvasLocation" x="1870" y="207"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="ObU-rJ-4jX">
@@ -197,25 +197,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="214.54272863568218"/>
+            <point key="canvasLocation" x="2660" y="208"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="l1g-tp-t1e">
+        <scene sceneID="tCQ-vu-fUh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jv0-sp-YPi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XR3-0B-XAc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sT6-y9-hMk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oQb-wT-I5R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BzZ-aP-iPo" kind="relationship" relationship="rootViewController" id="cZa-1L-U3b"/>
+                        <segue destination="376-0L-KGa" kind="relationship" relationship="rootViewController" id="K1V-g6-ISX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0cF-LM-cMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iuy-n0-PWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="215"/>
+            <point key="canvasLocation" x="1093.5999999999999" y="208.24587706146929"/>
         </scene>
     </scenes>
     <resources>

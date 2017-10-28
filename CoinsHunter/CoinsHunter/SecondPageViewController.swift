@@ -8,61 +8,52 @@
 
 import UIKit
 
-class SecondPageViewController: UIViewController, UIScrollViewDelegate {
+class SecondPageViewController: UIViewController, UIScrollViewDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var slideScrollView: UIScrollView!
+   
+    @IBOutlet weak var mainScrollView: UIScrollView!
+   
+    
+ 
+    @IBOutlet weak var pageControlS: UIPageControl!
+    
 
-    @IBOutlet weak var pageControl: UIPageControl!
+    
+    
+    var imageArray = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        slideScrollView.delegate = self
+        mainScrollView.delegate = self
+        mainScrollView.bounces = false
+        mainScrollView.frame = view.frame
+        imageArray = [#imageLiteral(resourceName: "firstImage"), #imageLiteral(resourceName: "secondImage"), #imageLiteral(resourceName: "thirdImage")]
         
-        let slides: [Slide] = createSlides()
-        setupSlideScrollView(slides: slides)
-        pageControl.numberOfPages = slides.count
-        pageControl.currentPage = 0
-        view.bringSubview(toFront: pageControl)
-        
-        tanslucentNC()
-    }
-    
-    func createSlides() -> [Slide] {
-        
-        let firstSlide: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        firstSlide.image.image = #imageLiteral(resourceName: "firstImage")
-        
-        let secondSlide: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        secondSlide.image.image = #imageLiteral(resourceName: "secondImage")
-        
-        let thirdSlide: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        thirdSlide.image.image = #imageLiteral(resourceName: "thirdImage")
-        
-        return [firstSlide, secondSlide, thirdSlide]
-    }
-    
-    func setupSlideScrollView(slides: [Slide]) {
-        
-        slideScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        
-        slideScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
-        
-        for i in 0 ..< slides.count {
-            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+        for i in 0..<imageArray.count {
             
-            slideScrollView.addSubview(slides[i])
-            
-            slideScrollView.isPagingEnabled = true
+            let imageView = UIImageView()
+            imageView.image = imageArray[i]
+            imageView.contentMode = .scaleToFill
+            let xPosition = self.view.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
+            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
+            mainScrollView.addSubview(imageView)
         }
         
+        pageControlS.numberOfPages = imageArray.count
+        pageControlS.currentPage = 0
+        view.bringSubview(toFront: pageControlS)
+        
+        tanslucentNC()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        pageControl.currentPage = Int(pageIndex)
+        pageControlS.currentPage = Int(pageIndex)
     }
+
     
     func tanslucentNC() {
         
@@ -76,3 +67,5 @@ class SecondPageViewController: UIViewController, UIScrollViewDelegate {
     
     
 }
+
+
