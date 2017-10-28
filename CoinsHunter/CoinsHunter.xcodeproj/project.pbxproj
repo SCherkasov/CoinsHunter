@@ -14,6 +14,7 @@
 		8A38CDA91F9CF5DF0014AFD4 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38CDA81F9CF5DF0014AFD4 /* FirstPageViewController.swift */; };
 		8A38CDB21F9D04CD0014AFD4 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38CDB11F9D04CD0014AFD4 /* SecondPageViewController.swift */; };
 		8A38CDB41F9D17290014AFD4 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38CDB31F9D17290014AFD4 /* LoginPageViewController.swift */; };
+		8A5BCB2E1FA4FA76009001AA /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5BCB2D1FA4FA76009001AA /* CountriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8A38CDA81F9CF5DF0014AFD4 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		8A38CDB11F9D04CD0014AFD4 /* SecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 		8A38CDB31F9D17290014AFD4 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		8A5BCB2D1FA4FA76009001AA /* CountriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				8A38CDA81F9CF5DF0014AFD4 /* FirstPageViewController.swift */,
 				8A38CDB11F9D04CD0014AFD4 /* SecondPageViewController.swift */,
 				8A38CDB31F9D17290014AFD4 /* LoginPageViewController.swift */,
+				8A5BCB2D1FA4FA76009001AA /* CountriesTableViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				8A38CDB21F9D04CD0014AFD4 /* SecondPageViewController.swift in Sources */,
 				8A38CDA91F9CF5DF0014AFD4 /* FirstPageViewController.swift in Sources */,
 				8A38CDB41F9D17290014AFD4 /* LoginPageViewController.swift in Sources */,
+				8A5BCB2E1FA4FA76009001AA /* CountriesTableViewController.swift in Sources */,
 				8A38CD971F9CE4810014AFD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
