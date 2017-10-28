@@ -21,6 +21,10 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmYourPasscodeLabel: UILabel!
     
     
+    
+    
+    
+    var passcodeMain: String = ""
     var passcode1: String = ""
     var passcode2: String = ""
     
@@ -41,12 +45,15 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         firstLoginTextField.becomeFirstResponder()
     }
-    //////////
+    
+    
     
     
     
@@ -60,8 +67,9 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
             thirdLoginTextField.text = ""
             fourthLoginTextField.text = ""
             confirmYourPasscodeLabel.isHidden = false
-        
         }
+    
+    
     
     
     
@@ -76,20 +84,22 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func sss(){
+    
+    
+    
+    func verification(){
         if passcode1 == passcode2{
-            
+            passcodeMain = passcode2
             performSegue(withIdentifier: "segue", sender: nil)
             print("Equal")
         }else{
             print("Different")
             confirmYourPasscodeLabel.text! = "try again.."
-        isLoggedIn()
-            
         }
     }
     
    
+    
     
     
     func didChange(textField: UITextField) {
@@ -108,35 +118,26 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 fourthLoginTextField.becomeFirstResponder()
                 case fourthLoginTextField:
                 fourthLoginTextField.becomeFirstResponder()
-                
                 firstLoginTextField.becomeFirstResponder()
                 
+                
+                
                 let pass: String = ""
+                
                 switch pass {
                 case passcode1:
                     pw1(passcode: passcode1)
                 case passcode2:
                     pw2(passcode: passcode2)
-                 sss()
+                 verification()
                 default:
                     break
                 }
-            
                 default: break
-          
             }
-            
         }
-        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        UserDefaults.standard.set(passcodeMain, forKey: "isLoggedIn")
         UserDefaults.standard.synchronize()
-        
+        print("Main passcode is: \(passcodeMain)")
         }
-    func isLoggedIn() -> Bool {
-        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
-    }
-
-
-    
-
-
