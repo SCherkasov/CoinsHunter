@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Locksmith
 
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
 
@@ -35,12 +36,17 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dictionary = Locksmith.loadDataForUserAccount(userAccount: "UserPass")
+        print("saved pass is: \(dictionary!)")
+        
         confirmYourPasscodeLabel.isHidden = true
         
         firstLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
         secondLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
         thirdLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
         fourthLoginTextField.addTarget(self, action: #selector(didChange(textField:)), for: UIControlEvents.editingChanged)
+        
+        
     }
     
     
@@ -90,6 +96,14 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     func verification(){
         if passcode1 == passcode2{
             passcodeMain = passcode2
+            
+            //Locksmith
+            do{
+                try Locksmith.saveData(data: ["passcodeMain" : passcodeMain], forUserAccount: "UserPass")
+            } catch {
+                print("can't save pass")
+            }
+            
             performSegue(withIdentifier: "segue", sender: nil)
             print("Equal")
         }else{
@@ -136,8 +150,5 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 default: break
             }
         }
-        UserDefaults.standard.set(passcodeMain, forKey: "isLoggedIn")
-        UserDefaults.standard.synchronize()
-        print("Main passcode is: \(passcodeMain)")
         }
-    }
+        }
