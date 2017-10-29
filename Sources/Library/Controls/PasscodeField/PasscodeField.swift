@@ -11,7 +11,15 @@ import UIKit
 @IBDesignable
 class PasscodeField : UIView {
     @IBInspectable
-    public var digitsCount: UInt = 4
+    public var digitsCount: UInt = 4 {
+        didSet {
+            passcodeFieldViewController.map {
+                $0.passcodeFieldView.map {
+                    $0.digitsCount = self.digitsCount
+                }
+            }
+        }
+    }
     
     @IBInspectable
     public var spacing: CGFloat = 10

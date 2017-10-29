@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AVd-kP-wbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,17 +120,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-8c-vGI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
-                                <rect key="frame" x="107.66666666666669" y="343" width="200" height="50"/>
+                                <rect key="frame" x="44" y="343" width="327.33333333333331" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RgD-Yv-Kfq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
-                                        <integer key="value" value="4"/>
+                                        <integer key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                         <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="windowSpacing">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="passcode" value="1234567890"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RqJ-u5-n6B" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
+                                <rect key="frame" x="44" y="249" width="327.33333333333331" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="windowSpacing">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nv9-Ih-csH" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
+                                <rect key="frame" x="44" y="165" width="327.33333333333331" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="200"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="windowSpacing">
                                         <real key="value" value="5"/>
@@ -140,7 +173,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="zy2-8c-vGI" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="c0c-tV-IOD"/>
-                            <constraint firstItem="zy2-8c-vGI" firstAttribute="width" secondItem="s4p-rZ-jNS" secondAttribute="height" multiplier="25:92" id="dtA-6q-1is"/>
+                            <constraint firstItem="zy2-8c-vGI" firstAttribute="width" secondItem="s4p-rZ-jNS" secondAttribute="height" multiplier="40:90" id="dtA-6q-1is"/>
                             <constraint firstItem="zy2-8c-vGI" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="haJ-Lc-3XL"/>
                         </constraints>
                     </view>

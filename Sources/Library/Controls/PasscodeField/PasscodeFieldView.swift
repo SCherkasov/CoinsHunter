@@ -18,6 +18,8 @@ class PasscodeFieldView: UIView {
     
     @IBOutlet var passcodeTextFields: [DigitTextField]!
     
+    var hintLabel: UILabel!
+    
     // MARK: Accessors
     
     public var delegate: UITextFieldDelegate? {
@@ -153,6 +155,17 @@ class PasscodeFieldView: UIView {
         self.backgroundColor = UIColor.clear
         
         self.setupPasscodeTextFields()
+        
+        if self.hintLabel != nil {
+            self.hintLabel.removeFromSuperview()
+        }
+        
+        let label = UILabel.init()
+        label.text = "Enter Passcode, \(self.digitsCount) digits"
+        label.frame = CGRect.init(x: 0, y: 0, width: 300, height: 50)
+        self.addSubview(label)
+        
+        self.hintLabel = label
         
         self.updateDelegate()
     }

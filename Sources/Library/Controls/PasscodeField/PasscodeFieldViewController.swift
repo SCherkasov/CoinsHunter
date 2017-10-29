@@ -10,7 +10,7 @@ import UIKit
 
 class PasscodeFieldViewController: UIViewController, UITextFieldDelegate {
 
-    private var passcodeFieldView: PasscodeFieldView?
+    public var passcodeFieldView: PasscodeFieldView?
     
     // MARK: Accessors
     
