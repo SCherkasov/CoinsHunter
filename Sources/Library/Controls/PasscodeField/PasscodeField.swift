@@ -15,7 +15,7 @@ class PasscodeField : UIView {
         didSet {
             passcodeFieldViewController.map {
                 $0.passcodeFieldView.map {
-                    $0.digitsCount = self.digitsCount
+                    $0.digitsCount = Int(self.digitsCount)
                 }
             }
         }
@@ -63,6 +63,17 @@ class PasscodeField : UIView {
         return self.passcodeFieldViewController.map {
             $0.activateFirstDigitBox()
         } ?? false
+    }
+    
+    override func layoutSubviews() {
+        let passcodeFieldBounds = self.bounds
+        self.passcodeFieldViewController.map {
+            $0.passcodeFieldView?.frame = passcodeFieldBounds
+        }
+        
+        super.layoutSubviews()
+        
+        print("Passcode field frame: \(self.frame)")
     }
     
     // MARK: Private

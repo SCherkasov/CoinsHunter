@@ -14,6 +14,28 @@ func concat(_ strings:[String?]) -> String? {
     }
 }
 
+func rectFrames(in frame:CGRect, spacing: CGFloat, count: Int) -> [CGRect] {
+    let floatCount = CGFloat.init(count)
+    
+    let width = frame.width / floatCount - (1 - 1 / floatCount) * spacing
+    let height = frame.height
+    let spacing = spacing
+    
+    var frames: [CGRect] = []
+    _ = Array(0..<count).map { i in
+        let index = CGFloat(i)
+        
+        let rect = CGRect.init(x: (width + spacing) * index,
+                               y: 0,
+                               width: width,
+                               height: height)
+        
+        frames.append(rect)
+    }
+    
+    return frames
+}
+
 class PasscodeFieldView: UIView {
     
     @IBOutlet var passcodeTextFields: [DigitTextField]!
@@ -28,7 +50,7 @@ class PasscodeFieldView: UIView {
         }
     }
     
-    public var digitsCount: UInt = 1 {
+    public var digitsCount: Int = 1 {
         didSet {
             self.setup()
         }
@@ -105,19 +127,14 @@ class PasscodeFieldView: UIView {
         self.setup()
     }
     
-    // MARK: Publlic
+    // MARK: Public
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let frames = self.rectFramesForDigits(in: self.frame)
         
-        for index in 0..<self.digitsCount {
-            if let passcodeTextFields = self.passcodeTextFields {
-                let idx = Int.init(index)
-                
-                passcodeTextFields[idx].frame = frames[idx]
-            }
-        }
+        self.updateDigitFieldsPositions()
+        
+        print("Passcode field view frame: \(self.frame)")
     }
     
     public func activateFirstDigitBox() -> Bool {
@@ -144,17 +161,18 @@ class PasscodeFieldView: UIView {
     
     // MARK: Private
     
+    private func rectFramesForDigits() -> [CGRect] {
+        return rectFrames(in: self.frame,
+                          spacing: self.spacing,
+                          count: Int(self.digitsCount))
+    }
+    
     private func setup() {
-        if self.passcodeTextFields != nil {
-            _ = self.passcodeTextFields.map {
-                $0.removeFromSuperview()
-            }
-        }
-        
-        self.passcodeTextFields = [];
-        self.backgroundColor = UIColor.clear
+        //self.backgroundColor = UIColor.clear
         
         self.setupPasscodeTextFields()
+        
+        self.updateDigitFieldsPositions()
         
         if self.hintLabel != nil {
             self.hintLabel.removeFromSuperview()
@@ -177,9 +195,16 @@ class PasscodeFieldView: UIView {
     }
     
     private func setupPasscodeTextFields() {
-        _ = self.rectFramesForDigits(in: CGRect.zero).map { frame in
-            
-            let digitTextField = self.generateDigitTextField(self.frame)
+        if self.passcodeTextFields != nil {
+            _ = self.passcodeTextFields.map {
+                $0.removeFromSuperview()
+            }
+        }
+        
+        self.passcodeTextFields = [];
+        
+        _ = Array(0..<self.digitsCount).map { _ in
+            let digitTextField = self.generateDigitTextField(CGRect.zero)
             
             digitTextField.onDeleteBackwardStart = { textField in
                 textField.text = ""
@@ -195,25 +220,11 @@ class PasscodeFieldView: UIView {
         }
     }
     
-    private func rectFramesForDigits(in frame:CGRect) -> [CGRect] {
-        let digitsCount = CGFloat.init(self.digitsCount)
-        
-        let width = frame.width / digitsCount - (1 - 1 / digitsCount) * self.spacing
-        let height = frame.height
-        let spacing = self.spacing
-        
-        var frames: [CGRect] = []
-        _ = Array(0..<self.digitsCount).map { i in
-            let index = CGFloat(i)
-            
-            let rect = CGRect.init(x: (width + spacing) * index,
-                                   y: 0,
-                                   width: width,
-                                   height: height)
-            
-            frames.append(rect)
+    private func updateDigitFieldsPositions() {
+        for (index, digitFrame) in self.rectFramesForDigits().enumerated() {
+            if (index < self.passcodeTextFields.count) {
+                self.passcodeTextFields[index].frame = digitFrame
+            }
         }
-        
-        return frames
     }
 }

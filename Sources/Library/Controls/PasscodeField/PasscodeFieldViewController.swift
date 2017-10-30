@@ -16,7 +16,7 @@ class PasscodeFieldViewController: UIViewController, UITextFieldDelegate {
     
     public var digitsCount: UInt = 1 {
         didSet {
-            self.passcodeFieldView?.digitsCount = self.digitsCount
+            self.passcodeFieldView?.digitsCount = Int(self.digitsCount)
         }
     }
     
@@ -42,7 +42,7 @@ class PasscodeFieldViewController: UIViewController, UITextFieldDelegate {
     
     override func loadView() {
         let passcodeFieldView = PasscodeFieldView.init()
-        passcodeFieldView.digitsCount = self.digitsCount
+        passcodeFieldView.digitsCount = Int(self.digitsCount)
         passcodeFieldView.spacing = self.spacing
         passcodeFieldView.passcode = self.passcode
         
