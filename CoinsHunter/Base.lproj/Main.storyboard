@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -109,6 +110,7 @@
         <!--Login Page View Controller-->
         <scene sceneID="ObU-rJ-4jX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="AVd-kP-wbI" customClass="LoginPageViewController" customModule="CoinsHunter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mWB-m8-Z4d"/>
@@ -118,13 +120,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-f2-cnI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
-                                <rect key="frame" x="87" y="126" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-6L-fjI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
+                                <rect key="frame" x="87" y="342" width="240" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="4jJ-QG-ICm"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                         <real key="value" value="10"/>
@@ -133,11 +136,15 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4nb-6L-fjI" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="ZrH-Tw-2Tj"/>
+                            <constraint firstItem="4nb-6L-fjI" firstAttribute="centerY" secondItem="s4p-rZ-jNS" secondAttribute="centerY" id="kCl-Lc-NPj"/>
+                            <constraint firstItem="4nb-6L-fjI" firstAttribute="width" secondItem="s4p-rZ-jNS" secondAttribute="height" multiplier="15:46" id="kFb-aE-yfc"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2371" y="214"/>
+            <point key="canvasLocation" x="2369.5652173913045" y="213.58695652173915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l1g-tp-t1e">
