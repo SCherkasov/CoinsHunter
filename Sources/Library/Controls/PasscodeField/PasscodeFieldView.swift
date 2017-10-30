@@ -180,7 +180,10 @@ class PasscodeFieldView: UIView {
         
         let label = UILabel.init()
         label.text = "Enter Passcode, \(self.digitsCount) digits"
-        label.frame = CGRect.init(x: 0, y: 0, width: 300, height: 50)
+        label.frame = self.frame
+        label.textAlignment = NSTextAlignment.center
+        label.textColor = UIColor.gray
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
         self.addSubview(label)
         
         self.hintLabel = label

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -119,36 +118,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv9-Ih-csH" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
-                                <rect key="frame" x="44" y="72" width="326" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fLi-Hp-Kxk"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-f2-cnI" customClass="PasscodeField" customModule="CoinsHunter" customModuleProvider="target">
+                                <rect key="frame" x="87" y="126" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
-                                        <integer key="value" value="2"/>
+                                        <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                        <real key="value" value="200"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="windowSpacing">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="nv9-Ih-csH" secondAttribute="trailing" constant="24" id="Z1V-Wb-ThR"/>
-                            <constraint firstItem="nv9-Ih-csH" firstAttribute="leading" secondItem="s4p-rZ-jNS" secondAttribute="leadingMargin" constant="24" id="e8I-Lt-t6S"/>
-                            <constraint firstItem="nv9-Ih-csH" firstAttribute="centerX" secondItem="s4p-rZ-jNS" secondAttribute="centerX" id="meI-i7-3Vp"/>
-                            <constraint firstItem="nv9-Ih-csH" firstAttribute="top" secondItem="mWB-m8-Z4d" secondAttribute="bottom" constant="8" id="yw1-aq-IwI"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="0.12118260209999999" blue="0.30424476340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbF-OD-HKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402.898550724638" y="214.4021739130435"/>
+            <point key="canvasLocation" x="2371" y="214"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l1g-tp-t1e">
